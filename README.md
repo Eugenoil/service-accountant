@@ -1,3 +1,3 @@
 # service-accountant
 
-Service that stores tracking reports
+Stores tracking reports
