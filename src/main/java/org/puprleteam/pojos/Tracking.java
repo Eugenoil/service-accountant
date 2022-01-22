@@ -1,8 +1,10 @@
 package org.puprleteam.pojos;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.puprleteam.interfaces.Trackings;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,7 +13,8 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @ToString
-public class Tracking {
+@Builder
+public class Tracking extends Trackings {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +37,6 @@ public class Tracking {
     private Integer status;
 
 
-
-
+    public Tracking() {
+    }
 }

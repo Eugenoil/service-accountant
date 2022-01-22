@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.puprleteam.data.SessionFactoryHolder;
 import org.puprleteam.interfaces.TrackingDao;
+import org.puprleteam.interfaces.Trackings;
 import org.puprleteam.pojos.Tracking;
 
 import java.io.Serializable;
@@ -42,7 +43,7 @@ public class TrackingDaoImpl implements TrackingDao {
     }
 
     @Override
-    public Serializable save(Tracking track) {
+    public Serializable save(Trackings track) {
         Session session = sessionFactory.openSession();
         Serializable id = null;
         Transaction tr = null;

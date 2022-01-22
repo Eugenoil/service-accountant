@@ -1,6 +1,5 @@
 package org.puprleteam.interfaces;
 
-import lombok.SneakyThrows;
 import org.puprleteam.pojos.Tracking;
 
 import java.io.Serializable;
@@ -12,7 +11,8 @@ public interface TrackingService {
      * Создает новый трек
      * @param tracking - трек для создания
      */
-    Serializable create(Tracking tracking);
+    Serializable create(Trackings tracking);
+
 
     /**
      * Возвращает список всех имеющихся клиентов

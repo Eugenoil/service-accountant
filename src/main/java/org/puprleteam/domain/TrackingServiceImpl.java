@@ -1,4 +1,4 @@
-package org.puprleteam.service;
+package org.puprleteam.domain;
 
 import lombok.SneakyThrows;
 import org.puprleteam.dao.TrackingDaoImpl;

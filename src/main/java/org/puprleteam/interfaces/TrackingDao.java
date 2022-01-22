@@ -12,7 +12,7 @@ public interface TrackingDao {
 
     List<Tracking> findAll() throws SQLException;
 
-    Serializable save(Tracking track) throws  SQLException;
+    Serializable save(Trackings track) throws  SQLException;
 
     void update(Tracking track) throws SQLException;
 
