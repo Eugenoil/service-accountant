@@ -15,8 +15,8 @@ public interface TrackingService {
 
 
     /**
-     * Возвращает список всех имеющихся клиентов
-     * @return список клиентов
+     * Возвращает список всех имеющихся треков
+     * @return список треков
      */
     List<Tracking> readAll();
 
@@ -29,18 +29,18 @@ public interface TrackingService {
     Tracking read(Long id);
 
     /**
-     * Обновляет клиента с заданным ID,
-     * в соответствии с переданным клиентом
+     * Обновляет трек с заданным ID,
+     * в соответствии с переданным треком
      * @param tracking - трек в соответсвии с которым нужно обновить данные
      * @return - true если данные были обновлены, иначе false
      */
 
-    void update(Tracking tracking);
+    boolean update(Tracking tracking);
 
     /**
-     * Удаляет клиента с заданным ID
+     * Удаляет трек с заданным ID
      * @param id - id трека, которого нужно удалить
      * @return - true если трек был удален, иначе false
      */
-    boolean delete(int id);
+    boolean delete(Long id);
 }

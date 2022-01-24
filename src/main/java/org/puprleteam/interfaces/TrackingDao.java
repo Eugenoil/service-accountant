@@ -14,7 +14,7 @@ public interface TrackingDao {
 
     Serializable save(Trackings track) throws  SQLException;
 
-    void update(Tracking track) throws SQLException;
+    boolean update(Tracking track) throws SQLException;
 
     boolean deleteTrackById(Serializable id) throws SQLException;
 }

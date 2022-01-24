@@ -1,19 +1,28 @@
 package org.puprleteam.pojos;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
+import lombok.*;
+import org.joda.time.Duration;
+import org.joda.time.Interval;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
 import org.puprleteam.interfaces.Trackings;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.Calendar;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonPropertyOrder({"id", "user_id", "task_name", "start_name", "end_time", "status"})
 @Entity
-@Getter
-@Setter
-@ToString
-@Builder
+@Table
 public class Tracking extends Trackings {
 
     @Id
@@ -28,15 +37,16 @@ public class Tracking extends Trackings {
     private String task_name;
 
     @Column
-    private Timestamp start_time;
+    @JsonDeserialize(using = DateDeserializers.CalendarDeserializer.class)
+    private Calendar start_time;
 
     @Column
-    private Timestamp end_time;
+    private Calendar end_time;
 
     @Column
     private Integer status;
 
+    @Column
+    private String duration;
 
-    public Tracking() {
-    }
 }

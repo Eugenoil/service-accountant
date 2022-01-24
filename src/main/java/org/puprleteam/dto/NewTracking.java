@@ -1,4 +1,4 @@
-package org.puprleteam.domain;
+package org.puprleteam.dto;
 
 import lombok.Builder;
 import lombok.Value;

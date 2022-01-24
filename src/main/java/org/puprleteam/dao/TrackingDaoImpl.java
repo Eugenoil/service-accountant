@@ -10,6 +10,7 @@ import org.puprleteam.pojos.Tracking;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class TrackingDaoImpl implements TrackingDao {
@@ -62,7 +63,7 @@ public class TrackingDaoImpl implements TrackingDao {
     }
 
     @Override
-    public void update(Tracking track) {
+    public boolean update(Tracking track) {
         Session session = sessionFactory.openSession();
         Transaction tr = null;
         try {
@@ -72,10 +73,12 @@ public class TrackingDaoImpl implements TrackingDao {
         } catch (Exception e) {
             if (tr != null) tr.rollback();
             e.printStackTrace();
+            return false;
         } finally {
             if (session != null)
                 session.close();
         }
+        return true;
     }
 
     @Override

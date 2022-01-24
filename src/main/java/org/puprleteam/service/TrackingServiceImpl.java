@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TrackingServiceImpl implements TrackingService {
 
-    private TrackingDaoImpl trackingDao = new TrackingDaoImpl();
+    private final TrackingDaoImpl trackingDao = new TrackingDaoImpl();
 
     @Override
     @SneakyThrows
@@ -33,13 +33,14 @@ public class TrackingServiceImpl implements TrackingService {
 
     @Override
     @SneakyThrows
-    public void update(Tracking tracking) {
+    public boolean update(Tracking tracking) {
         trackingDao.update(tracking);
+        return false;
     }
 
     @Override
     @SneakyThrows
-    public boolean delete(int id) {
+    public boolean delete(Long id) {
         return trackingDao.deleteTrackById(id);
     }
 }
